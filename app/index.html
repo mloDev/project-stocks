@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translations</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#stock-form").submit(function(e) {
+                e.preventDefault();
+                // Get value, make sure it's not empty.
+                if ($("#v").val() == "") {
+                    return;
+                }
+            });
+        });
+    </script>
+    <style>
+        .lang {
+            width: 50px;
+        }
+        .translate-form {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Project Stonks</span>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--3-col">
+                    <form id="translate-form" class="translate-form">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="v" name="v">
+                            <label class="mdl-textfield__label" for="v">Stock / WKN </label>
+                        </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit"
+                                name="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar" id="snackbar">
+            <div class="mdl-snackbar__text mdl-color-text--black"></div>
+            <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+    </main>
+</div>
+</body>
+
+</html>
